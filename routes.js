@@ -53,7 +53,7 @@ router.get('/async-retry', function (req, res) {
   res.end()
 })
 
-// retru endpoint to for /async-retry
+// retry endpoint to for /async-retry
 router.get('/retry-endpoint', function (req, res) {
   const randomBoolean = () => Math.random() >= 0.5
   if (randomBoolean()) {
