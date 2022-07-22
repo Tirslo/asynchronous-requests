@@ -1,0 +1,28 @@
+{
+  "name": "asynchronous-requests",
+  "version": "1.0.0",
+  "description": "NodeJS Asynchronous Requests examples/comparisons",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tirslo/asynchronous-requests.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tirslo/asynchronous-requests/issues"
+  },
+  "homepage": "https://github.com/Tirslo/asynchronous-requests#readme",
+  "dependencies": {
+    "async": "^3.2.4",
+    "express": "^4.18.1",
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.2.9",
+    "nodemon": "^2.0.19"
+  }
+}
