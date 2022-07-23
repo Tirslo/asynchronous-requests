@@ -53,7 +53,7 @@ curl http://localhost:5500/requests/async-waterfall
 curl http://localhost:5500/requests/async-series
 ```
 
-- Async Retry: retry with exponential backoff, attempts to get a successful response from the task run no more than the specified retry amount
+- Async Retry: retry with exponential backoff, attempts to get a successful response from the task run, no more than the specified retry amount
 
 ```bash
 curl http://localhost:5500/requests/async-retry
