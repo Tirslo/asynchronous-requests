@@ -6,7 +6,7 @@ Async Request strategies and basic implementations to get you started
 
 [Async Documentation](https://caolan.github.io/async/v3/)
 
-Requirements:
+### Requirements:
 
 - async 3.2.4
 - express 4.18.1
