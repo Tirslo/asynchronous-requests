@@ -78,49 +78,6 @@ const links = [
   'https://jsonplaceholder.typicode.com/users/5'
 ]
 
-const funcArr = [
-  function (callback) {
-    setTimeout(function () {
-      callback(null, 'one')
-    }, 200)
-  },
-  function (callback) {
-    setTimeout(function () {
-      callback(null, 'two')
-    }, 100)
-  },
-  function (callback) {
-    setTimeout(function () {
-      callback(null, 'three')
-    }, 200)
-  },
-  function (callback) {
-    setTimeout(function () {
-      callback(null, 'four')
-    }, 100)
-  },
-  function (callback) {
-    setTimeout(function () {
-      callback(null, 'five')
-    }, 200)
-  },
-  function (callback) {
-    setTimeout(function () {
-      callback(null, 'six')
-    }, 100)
-  },
-  function (callback) {
-    setTimeout(function () {
-      callback(null, 'seven')
-    }, 200)
-  },
-  function (callback) {
-    setTimeout(function () {
-      callback(null, 'eight')
-    }, 100)
-  }
-]
-
 const fetchArr = [
   function (callback) {
     setTimeout(() => {

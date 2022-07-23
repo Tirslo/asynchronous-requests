@@ -58,3 +58,8 @@ curl http://localhost:5500/requests/async-series
 ```bash
 curl http://localhost:5500/requests/async-retry
 ```
+
+## Examples
+
+[Async Documentation](https://caolan.github.io/async/v3/)
+Contains barebones examples of async functions
