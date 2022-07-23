@@ -2,6 +2,10 @@
 
 Async Request strategies and basic implementations to get you started
 
+## Documentation
+
+[Async Documentation](https://caolan.github.io/async/v3/)
+
 Requirements:
 
 - async 3.2.4
@@ -58,8 +62,3 @@ curl http://localhost:5500/requests/async-series
 ```bash
 curl http://localhost:5500/requests/async-retry
 ```
-
-## Examples
-
-[Async Documentation](https://caolan.github.io/async/v3/)
-Contains barebones examples of async functions
