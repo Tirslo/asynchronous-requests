@@ -368,7 +368,7 @@ const asyncQueueFast = async () => {
   })
 
   fetchQueue.push(links.slice(0, 3), err => {
-    console.log('list of tasks 4')
+    console.log('finishing batch tasks')
     if (err) {
       throw err
     }
@@ -382,7 +382,7 @@ const asyncQueueFast = async () => {
 // example waterfall requests
 const asyncWaterfall = async () => {
   async.waterfall(waterfallArr, function (err, result) {
-    console.log('final list:', result)
+    console.log('Waterfall List:', result)
     if (err) {
       console.log(err)
     }
@@ -393,13 +393,15 @@ const asyncWaterfall = async () => {
 const asyncSeries = async () => {
   async.series(seriesArr, function (err, results) {
     if (err) throw err
-    console.log(results)
+    console.log('Series List:', results)
   })
 }
 
 // example retry with exponential back off
 const asyncRetry = async () => {
-  console.log('async retry')
+  console.log(
+    'Trying flakey endpoint: http://localhost:5500/requests/retry-endpoint'
+  )
   async.retry(
     {
       times: 6,

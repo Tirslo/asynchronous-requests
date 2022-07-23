@@ -37,8 +37,8 @@ curl http://localhost:5500/requests/async-parallel
 - Async Queue: endpoints added to a queue run in parallel based on concurrency
 
 ```bash
-curl http://localhost:5500/requests/async-parallel
-curl http://localhost:5500/requests/async-parallel-fast
+curl http://localhost:5500/requests/async-queue
+curl http://localhost:5500/requests/async-queue-fast
 ```
 
 - Async Waterfall: array of functions, which relies on the output of the function before
@@ -50,7 +50,7 @@ curl http://localhost:5500/requests/async-waterfall
 - Async Series: array of functions, which execute as the previous task finishes
 
 ```bash
-curl http://localhost:5500/requests/async-waterfall
+curl http://localhost:5500/requests/async-series
 ```
 
 - Async Retry: retry with exponential backoff, attempts to get a successful response from the task run no more than the specified retry amount
