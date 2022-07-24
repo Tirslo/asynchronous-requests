@@ -187,48 +187,83 @@ const seriesArr = [
   }
 ]
 
-// example synchronous requests
+/* example synchronous requests
+ Synchronous requests retrieving back a name
+ setTimeout is used to simulate varying response times
+*/
 const synchronousExample = () => {
   setTimeout(() => {
     fetch(links[0])
       .then(res => res.json())
-      .then(json => console.log(json.name))
+      .then(json => {
+        console.log('Request 1')
+        console.log(json.name)
+        console.log('------------')
+      })
   }, 2000)
 
   setTimeout(() => {
     fetch(links[1])
       .then(res => res.json())
-      .then(json => console.log(json.name))
+      .then(json => {
+        console.log('Request 2')
+        console.log(json.name)
+        console.log('------------')
+      })
   }, 3000)
 
   setTimeout(() => {
     fetch(links[2])
       .then(res => res.json())
-      .then(json => console.log(json.name))
+      .then(json => {
+        console.log('Request 3')
+        console.log(json.name)
+        console.log('------------')
+      })
   }, 4000)
 
   setTimeout(() => {
     fetch(links[3])
       .then(res => res.json())
-      .then(json => console.log(json.name))
+      .then(json => {
+        console.log('Request 4')
+        console.log(json.name)
+        console.log('------------')
+      })
   }, 10000)
 
   setTimeout(() => {
     fetch(links[4])
       .then(res => res.json())
-      .then(json => console.log(json.name))
+      .then(json => {
+        console.log('Request 5')
+        console.log(json.name)
+        console.log('------------')
+      })
   }, 4000)
 }
 
-// example parallel requests
+/* example parallel requests
+ executes an array of fetch calls in parallel 
+ logging out the results of each task
+*/
 const asyncParallel = () => {
+  console.log('Parallel Requests')
   async.parallel(fetchArr, (err, results) => {
     console.log(results)
+    console.log('-----------')
     return results
   })
 }
 
-// example queuing with concurrency 1
+/* example async queue with concurrency of 1
+ push individual tasks to the queue 
+
+ unshift is used to prioritise a task to the front of the queue
+
+ push array of tasks to be requested "batches" 
+*/
+
 const asyncQueue = async () => {
   const concurrency = 1
   let userInfo = []
@@ -279,10 +314,20 @@ const asyncQueue = async () => {
 
   fetchQueue.drain(() => {
     console.log('all items have been processed')
+    console.log('-------------------------------')
   })
 }
 
-// example queing with concurrency 3
+/* example async queue with concurrency of 3
+
+ processes 3 tasks at the same time, 
+ adding one back to the queue as the subsequent task is finished
+
+ unshift is used to prioritise a task to the front of the queue
+
+ push array of tasks to be requested "batches" 
+*/
+
 const asyncQueueFast = async () => {
   const concurrency = 3
   let userInfo = []
@@ -333,11 +378,19 @@ const asyncQueueFast = async () => {
 
   fetchQueue.drain(() => {
     console.log('all items have been processed')
+    console.log('-------------------------------')
   })
 }
 
-// example waterfall requests
+/* example waterfall request
+  push an array of functions
+  each functions results are passed to the next function
+  once array of functions are exectued,
+  the final result is sent to the callback
+*/
+
 const asyncWaterfall = async () => {
+  console.log('Waterfall Requests')
   async.waterfall(waterfallArr, function (err, result) {
     console.log('Waterfall List:', result)
     if (err) {
@@ -346,15 +399,30 @@ const asyncWaterfall = async () => {
   })
 }
 
-// example series requests
+/* example series request
+  push an array of functions
+
+  each function runs in order, but are independant of each other
+  each functions results are passed to the callback
+
+  the final result is each functions results in an []
+*/
+
 const asyncSeries = async () => {
+  console.log('Series Requests')
   async.series(seriesArr, function (err, results) {
     if (err) throw err
     console.log('Series List:', results)
   })
 }
 
-// example retry with exponential back off
+/* example retry request with exponential back off
+  attempt to reach a flakey endpoint
+  specify the number of times to retry and the interval in which to retry
+
+  the retry will attempt to get a successful task until the limit or a success is reached
+*/
+
 const asyncRetry = async () => {
   console.log(
     'Trying flakey endpoint: http://localhost:5500/requests/retry-endpoint'
